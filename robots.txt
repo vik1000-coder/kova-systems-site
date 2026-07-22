@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Replace with the final domain before launch.
+Sitemap: https://www.kovasystems.com/sitemap.xml
