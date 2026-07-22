@@ -22,7 +22,7 @@
       <span data-company-name>Kova Systems</span>
     </a>
     <nav class="desktop-nav" aria-label="Primary navigation">
-      <a href="index.html">Company</a><a href="aver.html" aria-current="page">Aver</a><a href="prepiep.html">PrePIEP</a><a href="about.html">About</a>
+      <a href="index.html">Company</a><a href="aver.html" aria-current="page">Aver</a><a href="https://prepiep.com" target="_blank" rel="noopener">PrepIEP</a><a href="about.html">About</a>
       <a href="contact.html" class="nav-cta">Contact</a>
     </nav>
     <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" data-menu-button>
@@ -30,24 +30,22 @@
     </button>
   </div>
   <nav id="mobile-menu" class="mobile-nav" aria-label="Mobile navigation" data-mobile-nav hidden>
-    <a href="index.html">Company</a><a href="aver.html" aria-current="page">Aver</a><a href="prepiep.html">PrePIEP</a><a href="about.html">About</a>
+    <a href="index.html">Company</a><a href="aver.html" aria-current="page">Aver</a><a href="https://prepiep.com" target="_blank" rel="noopener">PrepIEP</a><a href="about.html">About</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>
 <main id="main">
-<section class="page-hero"><div class="container"><div class="breadcrumb"><a href="index.html">Kova Systems</a> / Aver</div><span class="status-pill"><span class="status-dot"></span>Active pilot development</span><h1 style="margin-top:22px">Change your AI models without breaking your application.</h1><p class="lede">Aver compares a current and candidate model configuration on representative workload examples, identifies meaningful regressions, and records the evidence behind a release decision.</p><div class="cluster" style="margin-top:30px"><a class="button button-primary" href="contact.html?topic=Aver">Discuss a pilot</a><a class="button button-secondary" href="#scope">See the current scope</a></div></div></section>
+<section class="page-hero"><div class="container"><div class="breadcrumb"><a href="index.html">Kova Systems</a> / Aver</div><p class="eyebrow" style="margin-top:18px">Coming soon</p><h1>Change your AI models without breaking your application.</h1><p class="lede">Aver compares a current and candidate model configuration on real workload examples, finds meaningful regressions, and records the evidence behind a release decision.</p><div class="cluster" style="margin-top:30px"><a class="button button-primary" href="contact.html?topic=Aver">Get updates</a><a class="button button-secondary" href="#scope">See what Aver will do</a></div></div></section>
 <section class="section"><div class="container grid grid-2"><div data-reveal><p class="eyebrow">The decision</p><h2>Is this change safe enough to ship?</h2><p class="kicker">Model swaps can lower cost or improve quality, but aggregate scores often hide the exact cases that changed. Aver is designed around the release decision rather than a generic benchmark.</p></div><div data-reveal>
   <div class="feature-row"><div class="feature-number">01 / REPLAY</div><div><h3>Use your workload</h3><p>Evaluate current and candidate configurations on prompts or cases that represent the behavior your application actually depends on.</p></div></div>
   <div class="feature-row"><div class="feature-number">02 / COMPARE</div><div><h3>Find the differences</h3><p>Surface changed outputs, likely regressions, and the exact examples that deserve review—not only a single average score.</p></div></div>
   <div class="feature-row"><div class="feature-number">03 / DECIDE</div><div><h3>Apply a reliability policy</h3><p>Choose the simplest, lowest-cost tested configuration that meets the standard you defined for the release.</p></div></div>
 </div></div></section>
-<section class="section section-muted" id="scope"><div class="container"><div class="section-heading"><div><p class="eyebrow">Current product scope</p><h2>Focused by design.</h2></div><p>Aver is currently a model-change assurance prototype. It is not presented as a universal certification system or a complete LLM operations platform.</p></div><div class="grid grid-2">
-<div class="card" data-reveal><h3>What Aver is designed to do</h3><ul class="scope-list"><li>Compare a current and candidate model or configuration</li><li>Run a defined set of real or representative cases</li><li>Expose the cases where behavior changed</li><li>Support a workload-specific pass or review policy</li><li>Preserve a record of inputs, settings, and results</li></ul></div>
-<div class="card" data-reveal><h3>What is not yet a managed claim</h3><ul class="scope-list not-yet"><li>Full end-to-end agent or application certification</li><li>General RAG, tool-use, and multi-turn effectiveness testing</li><li>A guarantee that an AI system will never fail in production</li><li>Regulatory approval or independent legal compliance</li><li>Replacement for engineering and domain-expert review</li></ul></div>
+<section class="section section-muted" id="scope"><div class="container"><div class="section-heading"><div><p class="eyebrow">What Aver will do</p><h2>Focused by design.</h2></div><p>Aver is a model-change assurance tool—not a full LLM operations platform or certification system.</p></div><div class="grid grid-2">
+<div class="card" data-reveal><h3>Designed to</h3><ul class="scope-list"><li>Compare a current and candidate model or configuration</li><li>Run a defined set of real or representative cases</li><li>Show where behavior changed</li><li>Support a simple pass or review policy</li><li>Keep a record of inputs, settings, and results</li></ul></div>
+<div class="card" data-reveal><h3>Not designed to</h3><ul class="scope-list not-yet"><li>Certify an entire AI application end to end</li><li>Guarantee that a model never fails in production</li><li>Replace engineering or domain-expert review</li></ul></div>
 </div></div></section>
-<section class="section section-dark"><div class="narrow" data-reveal><blockquote class="quote">Test the change. Inspect the failures. Ship only what meets the policy.</blockquote><p class="quote-source">Aver’s intended operating loop</p></div></section>
-<section class="section"><div class="container grid grid-3"><div class="card" data-reveal><h3>For individual builders</h3><p>Check whether a cheaper or newer model preserves the behavior your product relies on before changing production.</p></div><div class="card" data-reveal><h3>For product teams</h3><p>Create a shared review artifact for product, engineering, and domain stakeholders rather than debating a dashboard average.</p></div><div class="card" data-reveal><h3>For governed releases</h3><p>Retain tamper-evident release evidence as a supporting trust layer—not as a substitute for the evaluation itself.</p></div></div></section>
-<section class="section-sm"><div class="container"><div class="cta-band"><div><h2>Have a real model change to test?</h2><p>Early pilots should begin with one application, one candidate change, and a clearly defined reliability target.</p></div><a class="button button-light" href="contact.html?topic=Aver">Discuss an Aver pilot</a></div></div></section>
+<section class="section-sm"><div class="container"><div class="cta-band"><div><h2>Aver is coming soon.</h2><p>If you have a model-change problem you’d like to discuss, get in touch.</p></div><a class="button button-light" href="contact.html?topic=Aver">Contact us</a></div></div></section>
 </main>
 <footer class="site-footer">
   <div class="container">
@@ -56,7 +54,7 @@
         <a class="brand footer-brand" href="index.html"><img class="brand-mark" src="assets/img/logo.svg" alt="" width="36" height="36"><span data-company-name>Kova Systems</span></a>
         <p class="footer-copy">Evidence-centered software for decisions that deserve a clear record, a defined scope, and meaningful human review.</p>
       </div>
-      <div><div class="footer-heading">Products</div><div class="footer-links"><a href="aver.html">Aver</a><a href="prepiep.html">PrePIEP</a></div></div>
+      <div><div class="footer-heading">Products</div><div class="footer-links"><a href="aver.html">Aver</a><a href="https://prepiep.com" target="_blank" rel="noopener">PrepIEP</a></div></div>
       <div><div class="footer-heading">Company</div><div class="footer-links"><a href="about.html">About</a><a href="security.html">Security</a><a href="contact.html">Contact</a></div></div>
       <div><div class="footer-heading">Legal</div><div class="footer-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div>
     </div>

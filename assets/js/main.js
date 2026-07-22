@@ -44,8 +44,8 @@
     const requestedTopic = new URLSearchParams(window.location.search).get("topic");
     const topicSelect = contactForm.querySelector('select[name="topic"]');
     const topicMap = {
-      Aver: "Aver pilot",
-      PrePIEP: "PrePIEP parent research",
+      Aver: "Aver",
+      PrepIEP: "PrepIEP",
       Security: "Security"
     };
     if (topicSelect && requestedTopic && topicMap[requestedTopic]) {
