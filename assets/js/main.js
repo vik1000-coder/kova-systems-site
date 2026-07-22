@@ -17,16 +17,32 @@
   document.querySelectorAll("[data-current-year]").forEach((el) => {
     el.textContent = String(new Date().getFullYear());
   });
-  document.querySelectorAll("[data-contact-email]").forEach((el) => {
-    const email = config.contactEmail || "hello@example.com";
-    el.textContent = email;
-    if (el.tagName === "A") el.href = `mailto:${email}`;
+  const contactEmail = config.contactEmail || "contact@kovasystemsllc.com";
+  document.querySelectorAll("[data-contact-email], [data-security-email]").forEach((el) => {
+    el.textContent = contactEmail;
+    if (el.tagName === "A") el.href = `mailto:${contactEmail}`;
   });
-  document.querySelectorAll("[data-security-email]").forEach((el) => {
-    const email = config.securityEmail || config.contactEmail || "security@example.com";
-    el.textContent = email;
-    if (el.tagName === "A") el.href = `mailto:${email}`;
-  });
+
+  const siteUrl = String(config.siteUrl || "https://kovasystemsllc.com").replace(/\/$/, "");
+  const fileName = (window.location.pathname.split("/").pop() || "index.html").split("?")[0];
+  const canonicalPath = !fileName || fileName === "index.html" ? "/" : `/${fileName}`;
+  let canonical = document.querySelector('link[rel="canonical"]');
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.rel = "canonical";
+    document.head.appendChild(canonical);
+  }
+  // Keep externally owned product pages (e.g. PrepIEP) if already set.
+  if (!canonical.getAttribute("href") || !/^https?:\/\//i.test(canonical.getAttribute("href") || "") || canonical.getAttribute("href").includes("kovasystems")) {
+    canonical.href = `${siteUrl}${canonicalPath}`;
+  }
+  let ogUrl = document.querySelector('meta[property="og:url"]');
+  if (!ogUrl) {
+    ogUrl = document.createElement("meta");
+    ogUrl.setAttribute("property", "og:url");
+    document.head.appendChild(ogUrl);
+  }
+  ogUrl.setAttribute("content", canonical.href);
 
   const menuButton = document.querySelector("[data-menu-button]");
   const mobileNav = document.querySelector("[data-mobile-nav]");
@@ -59,7 +75,7 @@
       const email = String(data.get("email") || "").trim();
       const topic = String(data.get("topic") || "General inquiry").trim();
       const message = String(data.get("message") || "").trim();
-      const recipient = config.contactEmail || "hello@example.com";
+      const recipient = contactEmail;
       const subject = encodeURIComponent(`[${topic}] Website inquiry from ${name || "visitor"}`);
       const body = encodeURIComponent(
         `Name: ${name}\nEmail: ${email}\nTopic: ${topic}\n\n${message}`
